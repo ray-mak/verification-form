@@ -11,7 +11,7 @@ Users should be able to:
 - See hover, active, and focus states for interactive elements on the page
 
 <h2>Screenshot</h2>
-
+<img src="https://github.com/ray-mak/verification-form/assets/154634286/a49d9dea-bb7e-4017-949e-26d157116548" alt="screenshot of card form challenge"/>
 <h2>My Process</h2>
 <p>I first wrote the HTML and styled it. I was able to get the layout down for desktop, but had to take some time making it look nice for mobile. The mobile versions may still look a little janky depending on which device you use though. I then used JS to make the form and card interactive.</p>
 <h3>Built With</h3>
