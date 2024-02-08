@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Interactive Verification Form"/>
+        <title>Interactive Verification Form</title>
+        <link rel="stylesheet" href="card-form-css.css"/>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="card-container">
+                    <div class="card-front">
+                        <div class="card-logo"><img src="images/card-logo.svg" alt="Credit card logo"/></div>
+                        <div id="number-display">0000 0000 0000 0000</div>
+                        <div class="name-date">
+                            <span id="name-display">JANE APPLESEED</span>
+                            <div id="date-display"><span id="month-display">00</span>/<div id="year-display">00</div></div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div id="cvv-display">000</div>
+                    </div>
+                </div>
+                <div id="input-container">
+                    <form>
+                        <label for="name">
+                            CARDHOLDER NAME
+                            <input id="name" name="cardholder-name" type="text" placeholder="e.g Jane Appleseed" required/>
+                            <span class="blank">Can't be blank</span>
+                        </label>
+                        <label for="card-number">
+                            CARD NUMBER
+                            <input id="card-number" name="card-number" type="text" placeholder="e.g 1234 5678 9123 0000" maxlength="16"/>
+                            <span class="format">Wrong format, numbers only</span>
+                            <span class="blank">Can't be blank</span>
+                        </label>
+                        <div class="date-cvv-container">
+                            <label for="date" id="exp-container">
+                                EXP. DATE (MM/YY)
+                                <div class="date-container">
+                                    <input id="month-input" name="month-input" type="text" maxlength="2" placeholder="MM" required/>
+                                    <input id="year-input" name="year-input" type="text" maxlength="2" placeholder="YY" required/>
+                                </div>
+                                <span class="blank">Can't be blank</span>
+                                <span class="format">Wrong format, numbers only</span>
+                            </label>
+                            <label for="cvv" id="cvv-container">
+                                CVC
+                                <input id="cvv-input" name="cvv-input" type="text" maxlength="3" placeholder="e.g. 123" required/>
+                                <span class="blank">Can't be blank</span>
+                                <span class="format">Wrong format, numbers only</span>
+                            </label>
+                        </div>
+                        <button id="confirm-btn" class="btn-style" type="button">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script src="card-form-js.js"></script>
+    </body>
+</html>
