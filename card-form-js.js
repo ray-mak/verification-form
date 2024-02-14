@@ -30,7 +30,7 @@ const checkNum = () => {
     if (cardNumber.value === "") {
         cardNumber.parentElement.classList.add("invalid");
         cardNumber.parentElement.classList.remove("error");
-    } else if (!numRegex.test(cardNumber.value.trim())) {
+    } else if (!numRegex.test(cardNumber.value.replace(/ /g,""))) {
         cardNumber.parentElement.classList.remove("invalid");
         cardNumber.parentElement.classList.add("error");
     } else {
@@ -84,12 +84,18 @@ const validate = () => {
     }
 }
 
+const formatNumber = (num) => {
+    return num.replace(/\D/g,"").replace(/(\d{4})(?=\d)/g,"$1 ");
+}
+
 nameInput.addEventListener("keyup", () => {
     nameDisplay.innerText = `${nameInput.value.toUpperCase()}`
 })
 
-cardNumber.addEventListener("keyup", () => {
-    numberDisplay.innerText = `${cardNumber.value}`;
+cardNumber.addEventListener("input", () => {
+    const formattedNum = formatNumber(cardNumber.value);
+    cardNumber.value = formattedNum;
+    numberDisplay.innerText = `${formattedNum}`;
 })
 
 monthInput.addEventListener("keyup", () => {
